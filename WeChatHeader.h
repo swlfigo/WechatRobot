@@ -372,6 +372,10 @@
 @interface XMLDictionaryParser : NSObject
 + (id)sharedInstance;
 - (id)dictionaryWithString:(id)arg1;
+- (id)dictionaryWithData:(id)arg1;
+- (id)dictionaryWithParser:(id)arg1;
+- (id)dictionaryWithFile:(id)arg1;
+- (id)nameForNode:(id)arg1 inDictionary:(id)arg2;
 @end
 
 
