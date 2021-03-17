@@ -68,18 +68,18 @@
     if (msgData.isChatRoomMessage) {
         //Chat Room
         if (msgData.msgContent && msgData.msgContent.length > 0) {
-            NSError *error;
-            NSString *pattern = @"cdnurl = \"http(s)?://([\\w-]+\\.)+[\\w-]+(/[\\w- ./?%&=]*)?";
-            NSRegularExpression *regex = [NSRegularExpression regularExpressionWithPattern:pattern options:NSRegularExpressionCaseInsensitive error:&error];
-            NSArray<NSTextCheckingResult *> *result = [regex matchesInString:msgData.msgContent options:0 range:NSMakeRange(0, msgData.msgContent.length)];
-                if (result) {
-                    for (int i = 0; i<result.count; i++) {
-                        NSTextCheckingResult *res = result[i];
-                        NSString *cdnURLStr =  [msgData.msgContent substringWithRange:res.range];
-                        cdnURLStr = [cdnURLStr stringByReplacingOccurrencesOfString:@"cdnurl = \"" withString:@""];
-                        [msgService SendTextMessage:msgData.toUsrName toUsrName:msgData.fromUsrName msgText:[NSString stringWithFormat:@"Sticker Download URL : %@" , cdnURLStr ] atUserList:nil];
-                    }
+            NSRange beginRange = [msgData.msgContent rangeOfString:@"cdnurl = \""];
+            NSRange endRange = [msgData.msgContent rangeOfString:@"\" designerid"];
+            if (beginRange.location != NSNotFound && endRange.location != NSNotFound) {
+                NSString *cdnURL = [msgData.msgContent substringWithRange:NSMakeRange(beginRange.location+beginRange.length, endRange.location - beginRange.location - beginRange.length)];
+                
+                cdnURL = [cdnURL stringByReplacingOccurrencesOfString:@"&amp;" withString:@"&"];
+                
+                if (cdnURL) {
+                    [msgService SendTextMessage:msgData.toUsrName toUsrName:msgData.fromUsrName msgText:[NSString stringWithFormat:@"Sticker Download URL : %@" , cdnURL ] atUserList:nil];
                 }
+            }
+            
         }
         return;
     }
