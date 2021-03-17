@@ -1,0 +1,460 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 50;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		2C3F67902600721A00FB1455 /* WeChatHeader.h in Headers */ = {isa = PBXBuildFile; fileRef = 2C3F678F2600720C00FB1455 /* WeChatHeader.h */; };
+		2C3F67942600BE3900FB1455 /* Podfile in Resources */ = {isa = PBXBuildFile; fileRef = 2C3F67932600BE3900FB1455 /* Podfile */; };
+		2C8E69C6260052AE0004D9DF /* WechatMacMessageRobotFramework.h in Headers */ = {isa = PBXBuildFile; fileRef = 2C8E69C4260052AE0004D9DF /* WechatMacMessageRobotFramework.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		2C8E6AC126005B460004D9DF /* JRSwizzle.h in Headers */ = {isa = PBXBuildFile; fileRef = 2C8E6ABF26005B460004D9DF /* JRSwizzle.h */; };
+		2C8E6AC226005B460004D9DF /* JRSwizzle.m in Sources */ = {isa = PBXBuildFile; fileRef = 2C8E6AC026005B460004D9DF /* JRSwizzle.m */; };
+		2C8E6AC7260060070004D9DF /* main.mm in Sources */ = {isa = PBXBuildFile; fileRef = 2C8E6AC5260060070004D9DF /* main.mm */; };
+		2C8E6AD726006DE50004D9DF /* NSObject+hook.h in Headers */ = {isa = PBXBuildFile; fileRef = 2C8E6AD526006DE40004D9DF /* NSObject+hook.h */; };
+		2C8E6AD826006DE50004D9DF /* NSObject+hook.m in Sources */ = {isa = PBXBuildFile; fileRef = 2C8E6AD626006DE40004D9DF /* NSObject+hook.m */; };
+		2CBD3E1B2600F74300866524 /* WXDownloadManager.h in Headers */ = {isa = PBXBuildFile; fileRef = 2CBD3E192600F74300866524 /* WXDownloadManager.h */; };
+		2CBD3E1C2600F74300866524 /* WXDownloadManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 2CBD3E1A2600F74300866524 /* WXDownloadManager.m */; };
+		2CBD3E23260102DD00866524 /* NSImage+GIFHelper.h in Headers */ = {isa = PBXBuildFile; fileRef = 2CBD3E21260102DD00866524 /* NSImage+GIFHelper.h */; };
+		2CBD3E24260102DD00866524 /* NSImage+GIFHelper.m in Sources */ = {isa = PBXBuildFile; fileRef = 2CBD3E22260102DD00866524 /* NSImage+GIFHelper.m */; };
+		CFF98177967BCEF96F993A82 /* libPods-WechatMacMessageRobotFramework.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 51C02128F88DB6521199F15F /* libPods-WechatMacMessageRobotFramework.a */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXFileReference section */
+		2C3F678F2600720C00FB1455 /* WeChatHeader.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = WeChatHeader.h; sourceTree = "<group>"; };
+		2C3F67932600BE3900FB1455 /* Podfile */ = {isa = PBXFileReference; lastKnownFileType = text; path = Podfile; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
+		2C3F67AA2600EF1800FB1455 /* PromiseKit.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = PromiseKit.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		2C8E69C1260052AE0004D9DF /* WechatMacMessageRobotFramework.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = WechatMacMessageRobotFramework.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		2C8E69C4260052AE0004D9DF /* WechatMacMessageRobotFramework.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = WechatMacMessageRobotFramework.h; sourceTree = "<group>"; };
+		2C8E69C5260052AE0004D9DF /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		2C8E6ABF26005B460004D9DF /* JRSwizzle.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JRSwizzle.h; sourceTree = "<group>"; };
+		2C8E6AC026005B460004D9DF /* JRSwizzle.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JRSwizzle.m; sourceTree = "<group>"; };
+		2C8E6AC5260060070004D9DF /* main.mm */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.objcpp; path = main.mm; sourceTree = "<group>"; };
+		2C8E6AD526006DE40004D9DF /* NSObject+hook.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSObject+hook.h"; sourceTree = "<group>"; };
+		2C8E6AD626006DE40004D9DF /* NSObject+hook.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSObject+hook.m"; sourceTree = "<group>"; };
+		2CBD3E192600F74300866524 /* WXDownloadManager.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = WXDownloadManager.h; sourceTree = "<group>"; };
+		2CBD3E1A2600F74300866524 /* WXDownloadManager.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = WXDownloadManager.m; sourceTree = "<group>"; };
+		2CBD3E21260102DD00866524 /* NSImage+GIFHelper.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "NSImage+GIFHelper.h"; sourceTree = "<group>"; };
+		2CBD3E22260102DD00866524 /* NSImage+GIFHelper.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "NSImage+GIFHelper.m"; sourceTree = "<group>"; };
+		4BDB948B4970B78654B78CA2 /* Pods-WechatMacMessageRobotFramework.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-WechatMacMessageRobotFramework.debug.xcconfig"; path = "Target Support Files/Pods-WechatMacMessageRobotFramework/Pods-WechatMacMessageRobotFramework.debug.xcconfig"; sourceTree = "<group>"; };
+		51C02128F88DB6521199F15F /* libPods-WechatMacMessageRobotFramework.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-WechatMacMessageRobotFramework.a"; sourceTree = BUILT_PRODUCTS_DIR; };
+		51C5329816B50F551070922A /* Pods-WechatMacMessageRobotFramework.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-WechatMacMessageRobotFramework.release.xcconfig"; path = "Target Support Files/Pods-WechatMacMessageRobotFramework/Pods-WechatMacMessageRobotFramework.release.xcconfig"; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		2C8E69BE260052AE0004D9DF /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				CFF98177967BCEF96F993A82 /* libPods-WechatMacMessageRobotFramework.a in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		2C8E69B7260052AE0004D9DF = {
+			isa = PBXGroup;
+			children = (
+				2C3F67932600BE3900FB1455 /* Podfile */,
+				2C3F678F2600720C00FB1455 /* WeChatHeader.h */,
+				2C8E6AD426006DE40004D9DF /* Hook */,
+				2C8E69C3260052AE0004D9DF /* WechatMacMessageRobotFramework */,
+				2C8E69C2260052AE0004D9DF /* Products */,
+				68B5A1BA182725AD178BCB29 /* Pods */,
+				E2CA97E21EB496DE50CC7C66 /* Frameworks */,
+			);
+			sourceTree = "<group>";
+		};
+		2C8E69C2260052AE0004D9DF /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				2C8E69C1260052AE0004D9DF /* WechatMacMessageRobotFramework.framework */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		2C8E69C3260052AE0004D9DF /* WechatMacMessageRobotFramework */ = {
+			isa = PBXGroup;
+			children = (
+				2C8E6ABE26005B460004D9DF /* Utils */,
+				2C8E69C4260052AE0004D9DF /* WechatMacMessageRobotFramework.h */,
+				2C8E69C5260052AE0004D9DF /* Info.plist */,
+				2C8E6AC5260060070004D9DF /* main.mm */,
+			);
+			path = WechatMacMessageRobotFramework;
+			sourceTree = "<group>";
+		};
+		2C8E6ABE26005B460004D9DF /* Utils */ = {
+			isa = PBXGroup;
+			children = (
+				2CBD3E192600F74300866524 /* WXDownloadManager.h */,
+				2CBD3E1A2600F74300866524 /* WXDownloadManager.m */,
+				2C8E6ABF26005B460004D9DF /* JRSwizzle.h */,
+				2C8E6AC026005B460004D9DF /* JRSwizzle.m */,
+				2CBD3E21260102DD00866524 /* NSImage+GIFHelper.h */,
+				2CBD3E22260102DD00866524 /* NSImage+GIFHelper.m */,
+			);
+			path = Utils;
+			sourceTree = "<group>";
+		};
+		2C8E6AD426006DE40004D9DF /* Hook */ = {
+			isa = PBXGroup;
+			children = (
+				2C8E6AD526006DE40004D9DF /* NSObject+hook.h */,
+				2C8E6AD626006DE40004D9DF /* NSObject+hook.m */,
+			);
+			name = Hook;
+			path = WechatMacMessageRobotFramework/Hook;
+			sourceTree = "<group>";
+		};
+		68B5A1BA182725AD178BCB29 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				4BDB948B4970B78654B78CA2 /* Pods-WechatMacMessageRobotFramework.debug.xcconfig */,
+				51C5329816B50F551070922A /* Pods-WechatMacMessageRobotFramework.release.xcconfig */,
+			);
+			path = Pods;
+			sourceTree = "<group>";
+		};
+		E2CA97E21EB496DE50CC7C66 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				2C3F67AA2600EF1800FB1455 /* PromiseKit.framework */,
+				51C02128F88DB6521199F15F /* libPods-WechatMacMessageRobotFramework.a */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXHeadersBuildPhase section */
+		2C8E69BC260052AE0004D9DF /* Headers */ = {
+			isa = PBXHeadersBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				2CBD3E23260102DD00866524 /* NSImage+GIFHelper.h in Headers */,
+				2C8E69C6260052AE0004D9DF /* WechatMacMessageRobotFramework.h in Headers */,
+				2C3F67902600721A00FB1455 /* WeChatHeader.h in Headers */,
+				2CBD3E1B2600F74300866524 /* WXDownloadManager.h in Headers */,
+				2C8E6AD726006DE50004D9DF /* NSObject+hook.h in Headers */,
+				2C8E6AC126005B460004D9DF /* JRSwizzle.h in Headers */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXHeadersBuildPhase section */
+
+/* Begin PBXNativeTarget section */
+		2C8E69C0260052AE0004D9DF /* WechatMacMessageRobotFramework */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 2C8E69C9260052AE0004D9DF /* Build configuration list for PBXNativeTarget "WechatMacMessageRobotFramework" */;
+			buildPhases = (
+				336BF2B96C58B87F833021A8 /* [CP] Check Pods Manifest.lock */,
+				2C8E69BC260052AE0004D9DF /* Headers */,
+				2C8E69BD260052AE0004D9DF /* Sources */,
+				2C8E69BE260052AE0004D9DF /* Frameworks */,
+				2C8E69BF260052AE0004D9DF /* Resources */,
+				2C8E6AD226006D680004D9DF /* Path */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = WechatMacMessageRobotFramework;
+			productName = WechatMacMessageRobotFramework;
+			productReference = 2C8E69C1260052AE0004D9DF /* WechatMacMessageRobotFramework.framework */;
+			productType = "com.apple.product-type.framework";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		2C8E69B8260052AE0004D9DF /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastUpgradeCheck = 1240;
+				TargetAttributes = {
+					2C8E69C0260052AE0004D9DF = {
+						CreatedOnToolsVersion = 12.4;
+					};
+				};
+			};
+			buildConfigurationList = 2C8E69BB260052AE0004D9DF /* Build configuration list for PBXProject "WechatMacMessageRobotFramework" */;
+			compatibilityVersion = "Xcode 9.3";
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = 2C8E69B7260052AE0004D9DF;
+			productRefGroup = 2C8E69C2260052AE0004D9DF /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				2C8E69C0260052AE0004D9DF /* WechatMacMessageRobotFramework */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		2C8E69BF260052AE0004D9DF /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				2C3F67942600BE3900FB1455 /* Podfile in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		2C8E6AD226006D680004D9DF /* Path */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+			);
+			name = Path;
+			outputFileListPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "# Type a script or drag a script file from your workspace to insert its path.\napp_name=\"WeChat\"\nframework_name=\"WechatMacMessageRobotFramework\"\napp_bundle_path=\"/Applications/${app_name}.app/Contents/MacOS\"\napp_executable_path=\"${app_bundle_path}/${app_name}\"\napp_executable_backup_path=\"${app_executable_path}_backup\"\nframework_path=\"${app_bundle_path}/${framework_name}.framework\"\n# 备份WeChat原始可执行文件\nif [ ! -f \"$app_executable_backup_path\" ]\nthen\ncp \"$app_executable_path\" \"$app_executable_backup_path\"\nfi\n\ncp -r \"${BUILT_PRODUCTS_DIR}/${framework_name}.framework\" ${app_bundle_path}\n./insert_dylib --all-yes \"${framework_path}/${framework_name}\" \"$app_executable_backup_path\" \"$app_executable_path\"\n";
+		};
+		336BF2B96C58B87F833021A8 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-WechatMacMessageRobotFramework-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		2C8E69BD260052AE0004D9DF /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				2CBD3E24260102DD00866524 /* NSImage+GIFHelper.m in Sources */,
+				2CBD3E1C2600F74300866524 /* WXDownloadManager.m in Sources */,
+				2C8E6AC7260060070004D9DF /* main.mm in Sources */,
+				2C8E6AD826006DE50004D9DF /* NSObject+hook.m in Sources */,
+				2C8E6AC226005B460004D9DF /* JRSwizzle.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin XCBuildConfiguration section */
+		2C8E69C7260052AE0004D9DF /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				CURRENT_PROJECT_VERSION = 1;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				MACOSX_DEPLOYMENT_TARGET = 11.1;
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				MTL_FAST_MATH = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = macosx;
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Debug;
+		};
+		2C8E69C8260052AE0004D9DF /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				CURRENT_PROJECT_VERSION = 1;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				MACOSX_DEPLOYMENT_TARGET = 11.1;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				MTL_FAST_MATH = YES;
+				SDKROOT = macosx;
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Release;
+		};
+		2C8E69CA260052AE0004D9DF /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 4BDB948B4970B78654B78CA2 /* Pods-WechatMacMessageRobotFramework.debug.xcconfig */;
+			buildSettings = {
+				CODE_SIGN_STYLE = Automatic;
+				COMBINE_HIDPI_IMAGES = YES;
+				DEFINES_MODULE = YES;
+				DEVELOPMENT_TEAM = XAWR4AU4TQ;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				INFOPLIST_FILE = WechatMacMessageRobotFramework/Info.plist;
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/../Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = iSylar.WechatMacMessageRobotFramework;
+				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
+				SKIP_INSTALL = YES;
+			};
+			name = Debug;
+		};
+		2C8E69CB260052AE0004D9DF /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 51C5329816B50F551070922A /* Pods-WechatMacMessageRobotFramework.release.xcconfig */;
+			buildSettings = {
+				CODE_SIGN_STYLE = Automatic;
+				COMBINE_HIDPI_IMAGES = YES;
+				DEFINES_MODULE = YES;
+				DEVELOPMENT_TEAM = XAWR4AU4TQ;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				INFOPLIST_FILE = WechatMacMessageRobotFramework/Info.plist;
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/../Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = iSylar.WechatMacMessageRobotFramework;
+				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
+				SKIP_INSTALL = YES;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		2C8E69BB260052AE0004D9DF /* Build configuration list for PBXProject "WechatMacMessageRobotFramework" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				2C8E69C7260052AE0004D9DF /* Debug */,
+				2C8E69C8260052AE0004D9DF /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		2C8E69C9260052AE0004D9DF /* Build configuration list for PBXNativeTarget "WechatMacMessageRobotFramework" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				2C8E69CA260052AE0004D9DF /* Debug */,
+				2C8E69CB260052AE0004D9DF /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 2C8E69B8260052AE0004D9DF /* Project object */;
+}
