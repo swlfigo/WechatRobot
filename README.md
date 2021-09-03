@@ -1,7 +1,7 @@
 # WechatRobot
 Wechat Mac Message Robot
 
-Base on Wechat Mac Version. 2.6.1 (16871) Tweak
+Base on Wechat Mac Version. Base Wechat version 3.2.0 (19417) Tweak
 
 ## Usage
 ```shell
