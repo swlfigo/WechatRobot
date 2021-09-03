@@ -4,6 +4,20 @@
 //
 //  Created by sylar on 2021/3/16.
 //
+@interface MMService : NSObject
+
+@end
+
+@interface FFProcessReqsvrZZ : MMService
+- (id)FFProcessTReqZZ:(id)arg1 toUsrName:(id)arg2 msgText:(id)arg3 atUserList:(id)arg4;
+@end
+
+
+@interface MMChatMessageDataSource : NSObject
+- (void)onAddMsg:(id)arg1 msgData:(id)arg2;
+@end
+
+#pragma mark - Desperate
 @interface MessageService : NSObject
 - (void)downloadThumb:(id)arg1;
 - (void)reportAppFeedLiveWithInfo:(id)arg1;

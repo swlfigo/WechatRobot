@@ -15,10 +15,6 @@
 #import "NSImage+GIFHelper.h"
 @implementation NSObject (hook)
 + (void)hookWeChat{
-    [objc_getClass("MessageService") jr_swizzleMethod:@selector(FFImgToOnFavInfoInfoVCZZ:isFirstSync:) withMethod:@selector(hook_OnSyncBatchAddMsgs:isFirstSync:) error:nil];
-    [objc_getClass("MessageService") jr_swizzleMethod:@selector(SendImgMessage:toUsrName:thumbImgData:midImgData:imgData:imgInfo:) withMethod:@selector(hook_SendImgMessage:toUsrName:thumbImgData:midImgData:imgData:imgInfo:) error:nil];
-    [objc_getClass("MessageService") jr_swizzleMethod:@selector(SendTextMessage:toUsrName:msgText:atUserList:) withMethod:@selector(hook_SendTextMessage:toUsrName:msgText:atUserList:) error:nil];
-    [objc_getClass("MessageService") jr_swizzleMethod:@selector(notifyNewMsgNotificationOnMainThread:msgData:) withMethod:@selector(hook_notifyNewMsgNotificationOnMainThread:msgData:) error:nil];
     [objc_getClass("MMMessageCacheMgr") jr_swizzleMethod:@selector(originalImageWithMessage:completion:) withMethod:@selector(hook_originalImageWithMessage:completion:) error:nil];
     [objc_getClass("EmoticonMgr") jr_swizzleMethod:@selector(getEmotionImgWithMD5:) withMethod:@selector(hook_getEmotionImgWithMD5:) error:nil];
 
@@ -26,6 +22,9 @@
     [objc_getClass("XMLDictionaryParser") jr_swizzleMethod:@selector(dictionaryWithParser:) withMethod:@selector(hook_dictionaryWithParser:) error:nil];
     [objc_getClass("XMLDictionaryParser") jr_swizzleMethod:@selector(dictionaryWithFile:) withMethod:@selector(hook_dictionaryWithFile:) error:nil];
     [objc_getClass("XMLDictionaryParser") jr_swizzleMethod:@selector(nameForNode:inDictionary:) withMethod:@selector(hook_nameForNode:inDictionary:) error:nil];
+    [objc_getClass("FFProcessReqsvrZZ") jr_swizzleMethod:@selector(FFProcessTReqZZ:toUsrName:msgText:atUserList:) withMethod:@selector(hook_FFProcessTReqZZ:toUsrName:msgText:atUserList:) error:nil];
+    [objc_getClass("MMChatMessageDataSource") jr_swizzleMethod:@selector(onAddMsg:msgData:) withMethod:@selector(hook_onAddMsg:msgData:) error:nil];
+
 
 }
 
@@ -33,27 +32,16 @@
  hook 微信消息同步
  
  */
-- (void)hook_OnSyncBatchAddMsgs:(NSArray *)msgs isFirstSync:(BOOL)arg2 {
-    [self hook_OnSyncBatchAddMsgs:msgs isFirstSync:arg2];
-    [msgs enumerateObjectsUsingBlock:^(AddMsg *addMsg, NSUInteger idx, BOOL * _Nonnull stop) {
-        NSDate *now = [NSDate date];
-        NSTimeInterval nowSecond = now.timeIntervalSince1970;
-        if (nowSecond - addMsg.createTime > 180) {      // 若是3分钟前的消息，则不进行自动回复与远程控制。
-            return;
-        }
-        if (addMsg.msgType == 47) {
-            //Sticker
-        }
-        
-    }];
-    
+
+//New Version
+- (id)hook_FFProcessTReqZZ:(id)arg1 toUsrName:(id)arg2 msgText:(id)arg3 atUserList:(id)arg4{
+    id instance = [self hook_FFProcessTReqZZ:arg1 toUsrName:arg2 msgText:arg3 atUserList:arg4];
+    return instance;
 }
 
-
-
 //Receive New Msg
--(void)hook_notifyNewMsgNotificationOnMainThread:(id)arg1 msgData:(MessageData *)arg2{
-    [self hook_notifyNewMsgNotificationOnMainThread:arg1 msgData:arg2];
+- (void)hook_onAddMsg:(id)arg1 msgData:(MessageData *)arg2{
+    [self hook_onAddMsg:arg1 msgData:arg2];
     if (![arg2 isKindOfClass:objc_getClass("MessageData")]) return;
     if (arg2.messageType == 47 &&  ![arg2.msgContent isEqualToString:@""] && arg2.msgContent && arg2.msgContent.length > 0) {
         //sticker
@@ -64,7 +52,7 @@
 
 -(void)handleStickMsg:(MessageData *)msgData{
    
-    MessageService *msgService = [[objc_getClass("MMServiceCenter") defaultCenter] getService:objc_getClass("MessageService")];
+    FFProcessReqsvrZZ *msgService = [[objc_getClass("MMServiceCenter") defaultCenter] getService:objc_getClass("FFProcessReqsvrZZ")];
     if (msgData.isChatRoomMessage) {
         //Chat Room
         if (msgData.msgContent && msgData.msgContent.length > 0) {
@@ -76,7 +64,7 @@
                 cdnURL = [cdnURL stringByReplacingOccurrencesOfString:@"&amp;" withString:@"&"];
                 
                 if (cdnURL) {
-                    [msgService SendTextMessage:msgData.toUsrName toUsrName:msgData.fromUsrName msgText:[NSString stringWithFormat:@"Sticker Download URL : %@" , cdnURL ] atUserList:nil];
+                    [msgService FFProcessTReqZZ:msgData.toUsrName toUsrName:msgData.fromUsrName msgText:[NSString stringWithFormat:@"Sticker Download URL : %@" , cdnURL ] atUserList:nil];
                 }
             }
             
@@ -86,12 +74,8 @@
     //      xml 转 dict
     XMLDictionaryParser *xmlParser = [objc_getClass("XMLDictionaryParser") sharedInstance];
     NSDictionary *msgDict = [xmlParser dictionaryWithString:msgData.msgContent];
-    MMMessageCacheMgr *mgr = [[objc_getClass("MMServiceCenter") defaultCenter] getService:objc_getClass("MMMessageCacheMgr")];
     NSString *cdnURL = msgDict[@"emoji"][@"_cdnurl"];
-    NSString *thumbURL = msgDict[@"emoji"][@"_thumburl"];
-    NSString *md5 = msgDict[@"emoji"][@"_md5"];
-    CGFloat height = [msgDict[@"emoji"][@"_height"] floatValue];
-    CGFloat width = [msgDict[@"emoji"][@"_width"] floatValue];
+
     
     //Anthoer Friend Send You
     //This Name is Your Name
@@ -102,12 +86,11 @@
     NSString *currentUserName = [objc_getClass("CUtility") GetCurrentUserName];
 
     if (cdnURL) {
-        [msgService SendTextMessage:currentUserName toUsrName:fromUserName msgText:[NSString stringWithFormat:@"Sticker Download URL : %@" , cdnURL ] atUserList:nil];
+        [msgService FFProcessTReqZZ:currentUserName toUsrName:fromUserName msgText:[NSString stringWithFormat:@"Sticker Download URL : %@" , cdnURL ] atUserList:nil];
     }else{
-        [msgService SendTextMessage:currentUserName toUsrName:fromUserName msgText:@"Can't Get Sticker Download URL" atUserList:nil];
+        [msgService FFProcessTReqZZ:currentUserName toUsrName:fromUserName msgText:@"Can't Get Sticker Download URL" atUserList:nil];
     }
     
-//_productid system not nil
 
 }
 
